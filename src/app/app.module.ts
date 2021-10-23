@@ -12,6 +12,7 @@ import {FeaturesModule} from "./features/features.module";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {reducers} from "./store/reducers/reducers";
+import {AuthModule} from "@auth0/auth0-angular";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import {reducers} from "./store/reducers/reducers";
     FormsModule,
     AppRoutingModule,
     CoreModule,
+    // 👇 add and initialize AuthModule
+    AuthModule.forRoot({...environment.auth}),
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
         strictStateImmutability: true,

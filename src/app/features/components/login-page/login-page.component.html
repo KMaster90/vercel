@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <h1>Login Page</h1>
-    <form (ngSubmit)="onSubmit(loginForm.form.value)" #loginForm="ngForm">
+    <form (ngSubmit)="onSubmit(loginForm.form.value); loginWithRedirect()" #loginForm="ngForm">
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="username"
