@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AutenticationButtonComponent } from './components/login-logout-signup-button/autentication-button.component';
 import { StoreDirective } from './directives/store.directive';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -15,8 +16,9 @@ import { StoreDirective } from './directives/store.directive';
     exports: [
         NavbarComponent
     ],
-    imports: [
-        CommonModule
-    ]
+  imports: [
+    CommonModule,
+    RouterModule
+  ]
 })
 export class CoreModule { }
