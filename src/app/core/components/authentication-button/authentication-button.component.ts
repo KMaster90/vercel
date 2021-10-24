@@ -11,7 +11,7 @@ import {
 import {Observable} from "rxjs";
 import {AuthService} from "@auth0/auth0-angular";
 import {DOCUMENT} from "@angular/common";
-import {ACTION} from "../../directives/store.directive";
+import {ACTION} from "../../directives/ngrx.directive";
 import {ActionCreator} from "@ngrx/store";
 import {TypedAction} from "@ngrx/store/src/models";
 import {Destroyer} from "../destroyer";
@@ -25,14 +25,14 @@ export enum AUTH {
 
 @Component({
   selector: 'auth-button',
-  template: `<button class="btn btn-outline-secondary" type="button" [state]="btnAuth" [action]="action" (click)="btnClick()">{{btnAuth|titlecase}}</button>`,
+  template: `<button class="btn btn-outline-secondary" type="button" [ngrx] [action]="action" (click)="btnClick()">{{btnAuth|titlecase}}</button>`,
   styles: [``],
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 
-export class AutenticationButtonComponent extends Destroyer implements OnDestroy{
+export class AuthenticationButtonComponent extends Destroyer implements OnDestroy{
   @Input() btnAuth = AUTH.LOGIN;
-  action=<ActionCreator<string, (props:any) => TypedAction<string>>>{};
+  action:ActionCreator<string, (props:any) => TypedAction<string>>|undefined;
   constructor(@Inject(DOCUMENT) private doc: Document, private auth: AuthService, private cdr:ChangeDetectorRef) {
     super();
     this.auth.isAuthenticated$.pipe(takeUntil(this.destroy$)).subscribe(

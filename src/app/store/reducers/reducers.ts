@@ -1,7 +1,6 @@
-import * as loginPageReducer from './login-page.reducer';
-import * as myCounterReducer from './my-counter.reducer';
+import {authReducer, myCounterReducer} from './index';
 
 export const reducers = {
-  login:loginPageReducer.reducer,
+  login:authReducer.reducer,
   counter:myCounterReducer.reducer
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {login} from "../../../store/actions/login-page.actions";
+import {login} from "../../../store/actions/auth.actions";
 import {Login} from "../../models/login-page.model";
 import {AuthService} from "@auth0/auth0-angular";
 import {Observable} from "rxjs";
+import {AppState} from "../../../store/app.state";
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +14,7 @@ import {Observable} from "rxjs";
 export class LoginPageComponent implements OnInit {
   login = <Login>{};
 
-  constructor(private store:Store, private auth: AuthService) { }
+  constructor(private store:Store<AppState>, private auth: AuthService) { }
 
   ngOnInit(): void {
   }

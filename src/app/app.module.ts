@@ -12,7 +12,8 @@ import {FeaturesModule} from "./features/features.module";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {reducers} from "./store/reducers/reducers";
-import {AuthModule} from "@auth0/auth0-angular";
+import {AuthHttpInterceptor, AuthModule} from "@auth0/auth0-angular";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import {AuthModule} from "@auth0/auth0-angular";
     FeaturesModule,
     SharedModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
