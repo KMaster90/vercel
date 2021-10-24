@@ -9,8 +9,6 @@ import {of} from "rxjs";
 export class AppComponent {
   title = 'vercel';
 
-  constructor() {
-    of(this.title)
-  }
+  constructor() {}
 
 }
