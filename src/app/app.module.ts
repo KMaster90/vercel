@@ -12,7 +12,7 @@ import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {reducers} from "./store/reducers/reducers";
 import {AuthHttpInterceptor, AuthModule} from "@auth0/auth0-angular";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
@@ -24,6 +24,7 @@ import {SharedModule} from "./shared/shared.module";
     CommonModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule,
     // 👇 add and initialize AuthModule
     AuthModule.forRoot({...environment.auth}),

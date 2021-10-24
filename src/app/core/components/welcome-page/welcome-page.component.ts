@@ -5,6 +5,7 @@ import {Login} from "../../../features/models/login-page.model";
 import {AuthService} from "@auth0/auth0-angular";
 import {Observable} from "rxjs";
 import {AppState} from "../../../store/app.state";
+import {SafeUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-login-page',
@@ -22,5 +23,7 @@ export class WelcomePageComponent implements OnInit {
   loginWithRedirect = (): Observable<void>  => this.auth.loginWithRedirect({screen_hint: "signup"});
 
   onSubmit = ({username, password}:Login) => this.store.dispatch(login({ username, password }));
+  videoUrl$: Observable<SafeUrl>|undefined;
+  url="https://angular.io/assets/images/logos/angular/logo-nav@2x.png";
 
 }
