@@ -46,7 +46,7 @@ export class AuthenticationButtonComponent extends Destroyer implements OnDestro
                         ? (this.action = ACTION.LOGIN,this.login())
                         : (this.action = ACTION.LOGOUT,this.logout());
 
-  login = (): Observable<void>  => this.auth.loginWithPopup({screen_hint: `${this.btnAuth}`});
+  login = (): Observable<void>  => this.auth.loginWithRedirect({screen_hint: `${this.btnAuth}`});
   logout = (): void => this.auth.logout({ returnTo: this.doc.location.origin });
 
   ngOnDestroy(): void {
