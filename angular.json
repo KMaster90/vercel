@@ -34,7 +34,10 @@
               "node_modules/rxjs/bundles/rxjs.umd.min.js",
               "node_modules/@angular/core/bundles/core.umd.js",
               "node_modules/lodash/lodash.min.js",
-              "node_modules/@ngrx/store/bundles/ngrx-store.umd.js"
+              "node_modules/@ngrx/store/bundles/ngrx-store.umd.js",
+              "node_modules/jquery/dist/jquery.slim.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

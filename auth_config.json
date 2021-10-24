@@ -1,4 +1,9 @@
 {
   "domain": "dev-evlvq-u0.us.auth0.com",
-  "clientId": "vRHp0io39LcjIy9LF8Hqx1eDxwpzvdcl"
+  "clientId": "vRHp0io39LcjIy9LF8Hqx1eDxwpzvdcl",
+  "httpInterceptor": {
+    "allowedList": [
+      "/api/*"
+    ]
+  }
 }
