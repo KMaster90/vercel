@@ -9,13 +9,12 @@ import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {WelcomePageComponent} from "./components/welcome-page/welcome-page.component";
-import {SecuredSrcDirective} from "./directives/secured-src.directive";
 
 const coreComponents = [ NavbarComponent, AuthenticationButtonComponent, WelcomePageComponent, NgrxDirective];
-const coreDirectives = [SecuredSrcDirective];
+const coreDirectives = [];
 
 @NgModule({
-    declarations: [ ...coreComponents, ...coreDirectives ],
+    declarations: [ ...coreComponents ],
     exports: [NavbarComponent],
     imports: [
         CommonModule,
